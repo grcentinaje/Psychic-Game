@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Psychic Game</h1>
+    <br>
+    <h3>Guesses: </h3> <p id="guesses"></p>
+    <br>
+    <h3>Wins: </h3> <p id="wins"></p>
+    <br>
+    <h3>Chances Left: </h3> <p id="chancesLeft"></p>
+    
+    <script>
+
+    // Computer guesses
+    var compOptions = [ 'A ', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var compGuess = Math.floor(Math.random() * compOptions.length);
+    console.log(compOptions[compGuess]);
+
+    // // User guesses
+    var userOptions = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var userGuess = userOptions.length[userOptions];
+
+    document.getElementById("guesses").onkeypress = function() {myFunction()};
+
+    function myFunction() {
+
+        document.write(userOptions.length[userOptions]);
+
+    if (userGuess === compGuess) {
+
+        // Wins
+        alert("Congrats! You guessed right!");
+        
+        var wins = 0;
+
+        function points() {
+            var totalPoints = wins++;
+            return totalPoints;
+        }
+        
+        document.write(totalPoints++);
+
+        } else {
+        
+            document.write(userGuess);
+    
+            // Chances
+            var chancesLeft = 8;
+            var chances = (userGuess !== compGuess)
+    
+            for (var chances = 8; chances >= 0; chances--){
+
+            chancesLeft = chancesLeft - chances;    
+        
+            document.write(userGuess + ", ");
+            }
+        }
+    }
+    </script>
+</body>
+</html>
